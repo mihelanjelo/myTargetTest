@@ -1,6 +1,6 @@
 # myTargetTest
-Запуск с помощью pytest
-Требуется chromedriver
-Для авторизации нужен файл credentials.py вида:
-  login = 'login'
+Запуск с помощью pytest</br>
+Требуется chromedriver</br>
+Для авторизации нужен файл credentials.py вида: </br>
+  login = 'login'</br>
   password = 'password'
