@@ -5,6 +5,8 @@ class MainPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
+    TITLE = 'myTarget'
+
     LOCATORS = {
         "enter": '//span[contains(text(), "Войти")]',
         "input login": '//input[@name="login"]',

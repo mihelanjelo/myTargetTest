@@ -1,7 +1,4 @@
-import time
-
 from selenium import webdriver
-
 from credentials import login, password
 from pageobjects.campaigns_page import CampaignsPage
 from pageobjects.main_page import MainPage
@@ -22,11 +19,14 @@ def setup_module():
 
 def test_create_campaign():
     driver.get('https://target-sandbox.my.com/')
+    assert main_page.is_page_opened()
     main_page.wait_and_click('enter')
     main_page.wait_and_send_text('input login', login)
     main_page.wait_and_send_text('input password', password)
     main_page.wait_and_click('submit')
+    assert campaigns_page.is_page_opened()
     campaigns_page.wait_and_click('new campaign')
+    assert new_campaign_page.is_page_opened()
     new_campaign_page.wait_and_click('mobile')
     new_campaign_page.wait_and_send_text('input link', 'https://play.google.com/store/apps/details?id=ru.mail.mailapp')
     new_campaign_page.wait_and_click('mobile ads')
@@ -40,3 +40,4 @@ def test_create_campaign():
     new_campaign_page.wait_and_click('open when show')
     new_campaign_page.wait_and_click('choose only working time')
     new_campaign_page.deselect_time_not_in_10to17()
+
